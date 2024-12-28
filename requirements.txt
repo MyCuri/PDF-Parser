@@ -32,10 +32,7 @@ openai==1.58.1
 orjson==3.10.12
 packaging==24.2
 pandas==2.2.3
-pinecone==5.4.2
 pinecone-client==5.0.1
-pinecone-plugin-inference==1.1.0
-pinecone-plugin-interface==0.0.7
 propcache==0.2.1
 pydantic==2.10.4
 pydantic-settings==2.7.0
