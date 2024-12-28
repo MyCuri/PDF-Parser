@@ -19,7 +19,3 @@ MONGODB_PDF_COLLECTION = "pdfs"
 MONGODB_PROMPTS_COLLECTION = "prompts"
 
 TEMP_FOLDER = "temp"
-
-import streamlit as st
-
-st.write(MONGODB_URI)

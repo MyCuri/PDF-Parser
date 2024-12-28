@@ -1,15 +1,19 @@
+import certifi
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
 import config
 
 
+ca = certifi.where()
+
+
 class MongoDBHandler:
     def __init__(self):
-        import streamlit as st
 
-        st.write(config.MONGODB_URI)
-        self.client = MongoClient(config.MONGODB_URI, server_api=ServerApi("1"))
+        self.client = MongoClient(
+            config.MONGODB_URI, server_api=ServerApi("1"), tlsCAFile=ca
+        )
         self.pdf_collection = self.client[config.MONGODB_DATABASE][
             config.MONGODB_PDF_COLLECTION
         ]
