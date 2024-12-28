@@ -53,7 +53,7 @@ class PineconeHandler:
         num_vectors = 3
         if document_type == DocumentType.SUMMARY:
             # Increase the number of vectors to retrieve for summary documents
-            num_vectors = 10
+            num_vectors = 20
 
         self.multi_query_retriever = MultiQueryRetriever.from_llm(
             retriever=self.vector_store.as_retriever(
