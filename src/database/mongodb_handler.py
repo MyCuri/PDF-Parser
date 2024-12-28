@@ -1,11 +1,12 @@
-from pymongo import MongoClient
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 
 import config
 
 
 class MongoDBHandler:
     def __init__(self):
-        self.client = MongoClient(config.MONGODB_URI)
+        self.client = MongoClient(config.MONGODB_URI, server_api=ServerApi("1"))
         self.pdf_collection = self.client[config.MONGODB_DATABASE][
             config.MONGODB_PDF_COLLECTION
         ]
