@@ -6,6 +6,7 @@ import config
 
 class MongoDBHandler:
     def __init__(self):
+        print(config.MONGODB_URI)
         self.client = MongoClient(config.MONGODB_URI, server_api=ServerApi("1"))
         self.pdf_collection = self.client[config.MONGODB_DATABASE][
             config.MONGODB_PDF_COLLECTION
